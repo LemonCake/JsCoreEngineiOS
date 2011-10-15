@@ -1,0 +1,29 @@
+JsCoreEngineWrapper
+-------------------
+Simple singleton iOS class that wraps a JavascriptCore library to process javascript in the background thread
+
+Installation
+------------
+1. Import all the files into your project
+2. Go to build phases and add the following libraries:
+   - libstdc++.dylib
+   - libicucore.dylib
+   - libiOSJavaScriptCore.a
+3. import "JsCoreEngineWrapper.h"
+
+Usage
+-----
+
+1. Implement delegate methods to get the callback
+
+eg.
+- (void)JsCoreEvalResultsDidLoad:(NSString *)result {
+  NSLog(@"results: %@", result);
+}
+
+2. Anywhere in your class, invoke javascript
+
+eg.
+[JsCoreEngineWrapper instance].evalJsString("...")];
+
+3. Get the result in the delegate method and there you have it! Javascript in the background thread.
