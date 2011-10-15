@@ -7,8 +7,6 @@
 //
 
 #import "JsCoreEngineWrapper.h"
-#import "NSDictionary+Convenience.h"
-#import "NSString+Convenience.h"
 
 @interface JsCoreEngineWrapper ()
 
